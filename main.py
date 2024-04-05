@@ -25,7 +25,6 @@ def run():
         public_key = bitcoin.fast_multiply(bitcoin.G, decoded_private_key)
         address = bitcoin.pubkey_to_address(public_key)
 
-
         i+=1
         if i%10000==0:
             print(i)
@@ -33,7 +32,7 @@ def run():
         if address in list:
             print(list.index(address)+1)
             with open('winwin.txt', 'a+') as w:
-                w.write(f'{address} ---  {wif_encoded_private_key} \n')
+                w.write(f'{address} ---  {wif_encoded_private_key} --- {decoded_private_key} ---- {private_key}\n')
             print(wif_encoded_private_key)
             print(address)
 
